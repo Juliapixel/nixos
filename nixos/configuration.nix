@@ -124,7 +124,10 @@
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;
 
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = [ pkgs.proton-ge-bin ];
+  };
 
   programs.firefox.enable = true;
 
