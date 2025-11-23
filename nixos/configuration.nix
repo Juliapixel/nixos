@@ -7,6 +7,11 @@
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.gc = {
+    dates = "weekly";
+    automatic = true;
+    options = "--delete-older-than 7d";
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
