@@ -21,6 +21,13 @@
       };
     };
 
+    kitty = {
+      enable = true;
+      font.package = pkgs.source-code-pro;
+      font.name = "Source Code Pro";
+      themeFile = "ayu_mirage";
+    };
+
     starship = {
       enable = true;
       enableZshIntegration = true;
