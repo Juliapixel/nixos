@@ -31,9 +31,6 @@
       oh-my-zsh = {
         enable = true;
         theme = "sorin";
-        # customPkgs = [
-        #   pkgs.nix-zsh-completions
-        # ];
         plugins = [
           "git"
         ];

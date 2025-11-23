@@ -14,6 +14,13 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  boot.initrd.luks.devices."root".allowDiscards = true;
+
+  boot.initrd.availableKernelModules = [
+    "aesni_intel"
+    "cryptd"
+  ];
+
   networking.hostName = "julia-nix"; # Define your hostname.
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
