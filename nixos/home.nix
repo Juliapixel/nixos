@@ -21,6 +21,49 @@
       };
     };
 
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+      settings = {
+        add_newline = false;
+        format = lib.concatStrings [
+          "$directory"
+          "$git_branch"
+          "$git_status"
+          "$git_state"
+          "$character"
+        ];
+
+        directory = {
+          style = "bold blue";
+          truncate_to_repo = false;
+          truncation_symbol = "…/";
+        };
+
+        fill = {
+          symbol = " ";
+          style = "";
+        };
+
+        git_branch = {
+          format = "[$symbol$branch(:$remote_branch)]($style) ";
+          symbol = "";
+        };
+
+        git_status = {
+          format = "$all_status$ahead_behind";
+          diverged = "$ahead_count⇅$behind_count ";
+          ahead = "[$count↑](bold green) ";
+          behind = "[$count↓](bold green) ";
+          modified = "[$count!](bold yellow) ";
+          staged = "[$count+](bold yellow) ";
+          conflicted = "[$count=](bold red) ";
+          renamed = "[$count»](bold yellow) ";
+          untracked = "[$count?](bold yellow) ";
+        };
+      };
+    };
+
     zsh = {
       enable = true;
 
@@ -28,13 +71,6 @@
       history.size = 1000;
 
       enableCompletion = true;
-      oh-my-zsh = {
-        enable = true;
-        theme = "sorin";
-        plugins = [
-          "git"
-        ];
-      };
       plugins = [
           {
             name = "zsh-syntax-highlighting";
