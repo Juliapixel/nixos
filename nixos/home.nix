@@ -47,26 +47,23 @@
           truncation_symbol = "…/";
         };
 
-        fill = {
-          symbol = " ";
-          style = "";
-        };
-
         git_branch = {
-          format = "[$symbol$branch(:$remote_branch)]($style) ";
-          symbol = "";
+          style = "purple";
+          format = "[$branch(:$remote_branch)]($style) ";
         };
 
         git_status = {
           format = "$all_status$ahead_behind";
-          diverged = "$ahead_count⇅$behind_count ";
-          ahead = "[$count↑](bold green) ";
-          behind = "[$count↓](bold green) ";
-          modified = "[$count!](bold yellow) ";
-          staged = "[$count+](bold yellow) ";
-          conflicted = "[$count=](bold red) ";
-          renamed = "[$count»](bold yellow) ";
-          untracked = "[$count?](bold yellow) ";
+          diverged = "[$ahead_count⇅$behind_count](green) ";
+          ahead = "[$count↑](green) ";
+          behind = "[$count↓](green) ";
+          modified = "[$count!](yellow) ";
+          staged = "[$count+](yellow) ";
+          conflicted = "[$count=](red) ";
+          renamed = "[$count»](yellow) ";
+          untracked = "[$count?](yellow) ";
+          stashed = "[$count*](green) ";
+          deleted = "[$count✕](red) ";
         };
       };
     };
