@@ -74,6 +74,8 @@
       history.path = "/dev/null";
       history.size = 1000;
 
+      oh-my-zsh.enable = true;
+
       enableCompletion = true;
       plugins = [
           {
