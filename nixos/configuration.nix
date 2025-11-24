@@ -31,7 +31,16 @@
 
   networking.networkmanager.enable = true;
 
-  networking.nameservers = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+  networking.nameservers = [
+    "1.1.1.1#one.one.one.one"
+    "2606:4700:4700::1111#one.one.one.one"
+    "1.0.0.1#one.one.one.one"
+    "2606:4700:4700::1001#one.one.one.one"
+    "8.8.8.8#dns.google"
+    "2001:4860:4860::8888#dns.google"
+    "8.4.4.8#dns.google"
+    "2001:4860:4860::8844#dns.google"
+    ];
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
@@ -100,6 +109,8 @@
       turbo = "auto";
     };
   };
+
+  services.fstrim.enable = true;
 
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
