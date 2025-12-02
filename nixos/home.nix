@@ -1,4 +1,10 @@
-{ pkgs, lib, config, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
   home = {
     username = "julia";
     homeDirectory = "/home/julia";
@@ -6,6 +12,14 @@
   };
 
   programs = {
+    btop = {
+      enable = true;
+      settings = {
+        color_theme = "${pkgs.btop}/share/btop/themes/tokyo-night.theme";
+        proc_gradient = false;
+      };
+    };
+
     git = {
       enable = true;
       signing = {
@@ -78,16 +92,16 @@
 
       enableCompletion = true;
       plugins = [
-          {
-            name = "zsh-syntax-highlighting";
-            file = "zsh-syntax-highlighting.zsh";
-            src = pkgs.fetchFromGitHub {
-              owner = "zsh-users";
-              repo = "zsh-syntax-highlighting";
-              rev = "0.8.0";
-              sha256 = "iJdWopZwHpSyYl5/FQXEW7gl/SrKaYDEtTH9cGP7iPo=";
-            };
-          }
+        {
+          name = "zsh-syntax-highlighting";
+          file = "zsh-syntax-highlighting.zsh";
+          src = pkgs.fetchFromGitHub {
+            owner = "zsh-users";
+            repo = "zsh-syntax-highlighting";
+            rev = "0.8.0";
+            sha256 = "iJdWopZwHpSyYl5/FQXEW7gl/SrKaYDEtTH9cGP7iPo=";
+          };
+        }
       ];
     };
   };

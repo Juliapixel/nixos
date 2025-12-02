@@ -1,12 +1,19 @@
-{ config, inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nix.gc = {
     dates = "weekly";
     automatic = true;
@@ -45,7 +52,7 @@
     "2001:4860:4860::8888#dns.google"
     "8.4.4.8#dns.google"
     "2001:4860:4860::8844#dns.google"
-    ];
+  ];
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
@@ -111,7 +118,10 @@
   users.users.julia = {
     isNormalUser = true;
     description = "Julia";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       kdePackages.kate
       discord-canary
@@ -145,7 +155,6 @@
   environment.systemPackages = with pkgs; [
     bc
     binutils
-    btop
     btrfs-progs
     chatterino7
     curl
@@ -157,6 +166,7 @@
     pkg-config
     python314
     nixd
+    nixfmt
     nil
     source-code-pro
     tmux
