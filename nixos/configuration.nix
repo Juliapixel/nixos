@@ -123,7 +123,6 @@
       "wheel"
     ];
     packages = with pkgs; [
-      kdePackages.kate
       discord-canary
       spotify
     ];
@@ -153,16 +152,17 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    bc
     binutils
     btrfs-progs
     chatterino7
     curl
+    ffmpeg-full
     gcc
     git
     gnumake
     htop
     kitty
+    libqalculate
     pkg-config
     python314
     nixd

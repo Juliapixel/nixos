@@ -17,6 +17,8 @@
       settings = {
         color_theme = "${pkgs.btop}/share/btop/themes/tokyo-night.theme";
         proc_gradient = false;
+        update_ms = 1000;
+        proc_per_core = true;
       };
     };
 
