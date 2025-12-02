@@ -14,7 +14,7 @@
         key = "${config.home.homeDirectory}/.ssh/id_ed25519";
       };
       lfs.enable = true;
-      extraConfig = {
+      settings = {
         user.email = "git@juliapixel.com";
         user.name = "Juliapixel";
         init.defaultBranch = "main";
