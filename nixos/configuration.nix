@@ -1,6 +1,6 @@
 {
   config,
-  inputs,
+  open_in_mpv,
   pkgs,
   ...
 }:
@@ -147,11 +147,24 @@
     extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
 
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    policies = {
+      DisableTelemetry = true;
+      Extensions = {
+        Install = [
+          "https://github.com/Juliapixel/open_in_mpv/releases/download/v1.0.3/c70ef7cd6f344053b5b0-1.0.3.xpi"
+        ];
+      };
+      GenerativeAI.Chatbot = false;
+    };
+  };
 
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    open_in_mpv.packages.${pkgs.system}.default
+    mpv
     binutils
     btrfs-progs
     chatterino7
