@@ -54,6 +54,7 @@
           "$git_branch"
           "$git_status"
           "$git_state"
+          "$nix_shell"
           "$character"
         ];
 
@@ -80,6 +81,12 @@
           untracked = "[$count?](yellow) ";
           stashed = "[$count*](green) ";
           deleted = "[$count✕](red) ";
+        };
+
+        nix_shell = {
+          format = "[$symbol]($style) ";
+          style = "cyan";
+          symbol = "✶ ";
         };
       };
     };
