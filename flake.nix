@@ -7,12 +7,15 @@
     };
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
     open_in_mpv.url = "github:Juliapixel/open_in_mpv";
+    niri.url = "github:sodiboo/niri-flake";
+    waybar.url = "github:Alexays/Waybar";
+    stylix.url = "github:nix-community/stylix/release-25.11";
   };
-  outputs = { self, home-manager, nixpkgs, open_in_mpv }:
+  outputs = { self, home-manager, nixpkgs, open_in_mpv, niri, waybar, stylix }:
     {
       nixosConfigurations = {
         julia-nix = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit open_in_mpv; };
+          specialArgs = { inherit open_in_mpv niri waybar stylix; };
           modules = [
             ./nixos/configuration.nix
             home-manager.nixosModules.default {
@@ -21,7 +24,14 @@
                 useUserPackages = true;
                 backupFileExtension = "hm-bkp-${builtins.toString self.lastModified}";
 
-                users.julia = ./nixos/home.nix;
+                users.julia = {
+                  imports = [
+                    ./nixos/home.nix
+                    stylix.homeModules.stylix
+                    niri.homeModules.config
+                    niri.homeModules.stylix
+                  ];
+                };
               };
             }
           ];

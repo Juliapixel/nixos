@@ -11,11 +11,50 @@
     stateVersion = "25.05";
   };
 
+  imports = [
+    ./niri.nix
+  ];
+
+  stylix = {
+    enable = true;
+    overlays.enable = false;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-mirage.yaml";
+    # image = inputs.self + /assets/wallpaper.jpg;
+
+    fonts = {
+      sizes = {
+        applications = 10;
+        desktop = 10;
+      };
+
+      serif = {
+        package = pkgs.noto-fonts;
+        name = "Noto Serif";
+      };
+
+      sansSerif = {
+        package = pkgs.inter;
+        name = "Inter";
+      };
+
+      monospace = {
+        package = pkgs.source-code-pro;
+        name = "Source Code Pro";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-color-emoji;
+        name = "Noto Color Emoji";
+      };
+    };
+  };
+
+
   programs = {
     btop = {
       enable = true;
       settings = {
-        color_theme = "${pkgs.btop}/share/btop/themes/tokyo-night.theme";
+        # color_theme = "${pkgs.btop}/share/btop/themes/tokyo-night.theme";
         proc_gradient = false;
         update_ms = 1000;
         proc_per_core = true;
@@ -39,8 +78,6 @@
 
     kitty = {
       enable = true;
-      font.package = pkgs.source-code-pro;
-      font.name = "Source Code Pro";
       themeFile = "ayu_mirage";
     };
 
