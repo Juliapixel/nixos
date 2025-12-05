@@ -89,8 +89,19 @@
   # Configure console keymap
   console.keyMap = "br-abnt2";
 
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      brlaser
+    ];
+  };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
