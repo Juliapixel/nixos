@@ -75,6 +75,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1758216857,
+        "narHash": "sha256-h1BW2y7CY4LI9w61R02wPaOYfmYo82FyRqHIwukQ6SY=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d2ed99647a4b195f0bcc440f76edfa10aeb3b743",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d2ed99647a4b195f0bcc440f76edfa10aeb3b743",
+        "type": "github"
+      }
+    },
     "open_in_mpv": {
       "inputs": {
         "fenix": "fenix",
@@ -98,7 +114,8 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "open_in_mpv": "open_in_mpv"
+        "open_in_mpv": "open_in_mpv",
+        "technorino": "technorino"
       }
     },
     "rust-analyzer-src": {
@@ -116,6 +133,26 @@
         "ref": "nightly",
         "repo": "rust-analyzer",
         "type": "github"
+      }
+    },
+    "technorino": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1763007738,
+        "narHash": "sha256-n3KhTpKqi/qVlSX0Zf+3QF1HPgtMffJGMJGAYIIZx1k=",
+        "ref": "refs/heads/technorino",
+        "rev": "b367fd7ee2e3df334c414da08e21d30429478ba0",
+        "revCount": 5865,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/2547techno/technorino"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/2547techno/technorino"
       }
     }
   },

@@ -1,6 +1,7 @@
 {
   config,
   open_in_mpv,
+  technorino,
   pkgs,
   ...
 }:
@@ -178,7 +179,7 @@
     mpv
     binutils
     btrfs-progs
-    chatterino7
+    technorino.packages.${pkgs.system}.default
     curl
     ffmpeg-full
     gcc
