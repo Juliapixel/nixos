@@ -90,6 +90,15 @@
   # Configure console keymap
   console.keyMap = "br-abnt2";
 
+  virtualisation = {
+    containers.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
+    };
+  };
+
   services.avahi = {
     enable = true;
     nssmdns4 = true;
@@ -132,6 +141,7 @@
     description = "Julia";
     extraGroups = [
       "networkmanager"
+      "podman"
       "wheel"
     ];
     packages = with pkgs; [
@@ -193,6 +203,7 @@
     nixd
     nixfmt
     nil
+    podman-compose
     source-code-pro
     tmux
     vim
