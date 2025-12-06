@@ -175,11 +175,11 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    open_in_mpv.packages.${pkgs.system}.default
+    open_in_mpv.packages.${pkgs.stdenv.hostPlatform.system}.default
     mpv
     binutils
     btrfs-progs
-    technorino.packages.${pkgs.system}.default
+    technorino.packages.${pkgs.stdenv.hostPlatform.system}.default
     curl
     ffmpeg-full
     gcc
