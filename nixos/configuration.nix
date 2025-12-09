@@ -2,6 +2,7 @@
   config,
   open_in_mpv,
   technorino,
+  make_it_braille,
   pkgs,
   ...
 }:
@@ -154,9 +155,9 @@
     ];
     packages = with pkgs; [
       discord-canary
+      make_it_braille.packages.${pkgs.stdenv.hostPlatform.system}.default
       spotify
       technorino.packages.${pkgs.stdenv.hostPlatform.system}.default
-
     ];
     shell = pkgs.zsh;
   };

@@ -11,12 +11,16 @@
       url = "git+https://github.com/2547techno/technorino?submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    make_it_braille = {
+      url = "github:juliapixel/make_it_braille";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = { self, home-manager, nixpkgs, open_in_mpv, technorino }:
+  outputs = { self, home-manager, nixpkgs, open_in_mpv, technorino, make_it_braille }:
     {
       nixosConfigurations = {
         julia-nix = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit open_in_mpv technorino; };
+          specialArgs = { inherit open_in_mpv technorino make_it_braille; };
           modules = [
             ./nixos/configuration.nix
             home-manager.nixosModules.default {
