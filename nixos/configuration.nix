@@ -74,6 +74,31 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
+  systemd = {
+    oomd.enable = true;
+    # limit charge to 90% if not limited
+    services.bat_cap =
+      let
+        script = pkgs.writeShellScript "bat_cap" ''
+          set -euo pipefail
+
+          if [ ! -f /sys/class/power_supply/BAT1/charge_control_end_threshold ]; then
+            echo "battery charge_control_end_threshold file does not exist"
+            exit 0
+          fi
+
+          if [ $(cat /sys/class/power_supply/BAT1/charge_control_end_threshold) -eq 100 ]; then
+            echo 90 > /sys/class/power_supply/BAT1/charge_control_end_threshold
+          fi
+        '';
+      in
+      {
+        script = "${script}";
+        name = "bat_cap.service";
+        wantedBy = [ "multi-user.target" ];
+      };
+  };
+
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   # services.xserver.enable = true;
