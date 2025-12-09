@@ -1,13 +1,16 @@
 {
   description = "My NixOS config";
   inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
     open_in_mpv.url = "github:Juliapixel/open_in_mpv";
-    technorino.url = "git+https://github.com/2547techno/technorino?submodules=1";
+    technorino = {
+      url = "git+https://github.com/2547techno/technorino?submodules=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = { self, home-manager, nixpkgs, open_in_mpv, technorino }:
     {

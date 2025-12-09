@@ -136,6 +136,14 @@
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
 
+  # lets btop read intel Xe gpu usage
+  security.wrappers.btop = {
+    owner = "root";
+    group = "root";
+    capabilities = "cap_perfmon+ep";
+    source = "${pkgs.btop}/bin/btop";
+  };
+
   users.users.julia = {
     isNormalUser = true;
     description = "Julia";
@@ -147,6 +155,8 @@
     packages = with pkgs; [
       discord-canary
       spotify
+      technorino.packages.${pkgs.stdenv.hostPlatform.system}.default
+
     ];
     shell = pkgs.zsh;
   };
@@ -159,7 +169,10 @@
     ];
   };
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+  };
 
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;
@@ -189,7 +202,6 @@
     mpv
     binutils
     btrfs-progs
-    technorino.packages.${pkgs.stdenv.hostPlatform.system}.default
     curl
     ffmpeg-full
     gcc
