@@ -16,10 +16,16 @@
     "nix-command"
     "flakes"
   ];
+
   nix.gc = {
     dates = "weekly";
     automatic = true;
     options = "--delete-older-than 7d";
+  };
+
+  # dont fry my ssd
+  fileSystems."/" = {
+    options = [ "defaults" "noatime" "async" "errors=remount-ro" "commit=30" ];
   };
 
   # Bootloader.
