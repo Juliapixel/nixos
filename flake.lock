@@ -69,11 +69,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764866045,
-        "narHash": "sha256-0GsEtXV9OquDQ1VclQfP16cU5VZh7NEVIOjSH4UaJuM=",
+        "lastModified": 1765979862,
+        "narHash": "sha256-/r9/1KamvbHJx6I40H4HsSXnEcBAkj46ZwibhBx9kg0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "f63d0fe9d81d36e5fc95497217a72e02b8b7bcab",
+        "rev": "d3135ab747fd9dac250ffb90b4a7e80634eacbe9",
         "type": "github"
       },
       "original": {
@@ -92,11 +92,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765265648,
-        "narHash": "sha256-IAPGYNhJLyz29RyJgzargLVc0QTjizf/mfqRlNTuHns=",
+        "lastModified": 1765267917,
+        "narHash": "sha256-ZHwiKbCTMJ3kW4paod4EENg2EcMbwwh/RHapY+GWiFQ=",
         "owner": "juliapixel",
         "repo": "make_it_braille",
-        "rev": "847ca40c967e4bcb75c7b73dbfaa026a69f4f37d",
+        "rev": "adb62aee6262ee5b646f9924dcbd43ec9f940ebd",
         "type": "github"
       },
       "original": {
@@ -107,11 +107,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1764831616,
-        "narHash": "sha256-OtzF5wBvO0jgW1WW1rQU9cMGx7zuvkF7CAVJ1ypzkxA=",
+        "lastModified": 1765838191,
+        "narHash": "sha256-m5KWt1nOm76ILk/JSCxBM4MfK3rYY7Wq9/TZIIeGnT8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c97c47f2bac4fa59e2cbdeba289686ae615f8ed4",
+        "rev": "c6f52ebd45e5925c188d1a20119978aa4ffd5ef6",
         "type": "github"
       },
       "original": {
@@ -221,11 +221,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763007738,
-        "narHash": "sha256-n3KhTpKqi/qVlSX0Zf+3QF1HPgtMffJGMJGAYIIZx1k=",
+        "lastModified": 1766038008,
+        "narHash": "sha256-G8dO+92VjEoE4q0dQ1iAS0KmnDDYOGxFMZEbWStd0r8=",
         "ref": "refs/heads/technorino",
-        "rev": "b367fd7ee2e3df334c414da08e21d30429478ba0",
-        "revCount": 5865,
+        "rev": "f09d80a539be194c99605d9230dd34bf3108194b",
+        "revCount": 5929,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/2547techno/technorino"
