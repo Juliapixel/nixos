@@ -92,11 +92,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765267917,
-        "narHash": "sha256-ZHwiKbCTMJ3kW4paod4EENg2EcMbwwh/RHapY+GWiFQ=",
+        "lastModified": 1766477553,
+        "narHash": "sha256-FhZ1FhJ7Vxv7zGBfbwPjvQlByLmXQu1Bs5LFGfhueIo=",
         "owner": "juliapixel",
         "repo": "make_it_braille",
-        "rev": "adb62aee6262ee5b646f9924dcbd43ec9f940ebd",
+        "rev": "4ba899af772664ae3622bae56c819ea3c238ed2c",
         "type": "github"
       },
       "original": {
