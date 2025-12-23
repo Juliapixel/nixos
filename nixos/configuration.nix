@@ -185,7 +185,7 @@
       "wheel"
     ];
     packages = with pkgs; [
-      discord-canary
+      vesktop
       make_it_braille.packages.${pkgs.stdenv.hostPlatform.system}.default
       spotify
       technorino.packages.${pkgs.stdenv.hostPlatform.system}.default
