@@ -25,7 +25,13 @@
 
   # dont fry my ssd
   fileSystems."/" = {
-    options = [ "defaults" "noatime" "async" "errors=remount-ro" "commit=30" ];
+    options = [
+      "defaults"
+      "noatime"
+      "async"
+      "errors=remount-ro"
+      "commit=30"
+    ];
   };
 
   # Bootloader.

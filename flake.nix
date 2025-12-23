@@ -16,14 +16,23 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, home-manager, nixpkgs, open_in_mpv, technorino, make_it_braille }:
+  outputs =
+    {
+      self,
+      home-manager,
+      nixpkgs,
+      open_in_mpv,
+      technorino,
+      make_it_braille,
+    }:
     {
       nixosConfigurations = {
         julia-nix = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit open_in_mpv technorino make_it_braille; };
           modules = [
             ./nixos/configuration.nix
-            home-manager.nixosModules.default {
+            home-manager.nixosModules.default
+            {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
