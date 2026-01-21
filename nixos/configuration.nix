@@ -111,19 +111,9 @@
       };
   };
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  # services.xserver.enable = true;
-
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-
-  # Configure keymap in X11
-  # services.xserver.xkb = {
-  #   layout = "br";
-  #   variant = "";
-  # };
 
   # Configure console keymap
   console.keyMap = "br-abnt2";
@@ -193,6 +183,7 @@
     packages = with pkgs; [
       vesktop
       make_it_braille.packages.${pkgs.stdenv.hostPlatform.system}.default
+      prismlauncher
       spotify
       technorino.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
