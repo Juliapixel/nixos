@@ -127,6 +127,13 @@
     };
   };
 
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+    };
+  };
+
   services.avahi = {
     enable = true;
     nssmdns4 = true;
