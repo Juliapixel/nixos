@@ -69,11 +69,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768603898,
-        "narHash": "sha256-vRV1dWJOCpCal3PRr86wE2WTOMfAhTu6G7bSvOsryUo=",
+        "lastModified": 1770260404,
+        "narHash": "sha256-3iVX1+7YUIt23hBx1WZsUllhbmP2EnXrV8tCRbLxHc8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2a63d0e9d2c72ac4d4150ebb242cf8d86f488c8c",
+        "rev": "0d782ee42c86b196acff08acfbf41bb7d13eed5b",
         "type": "github"
       },
       "original": {
@@ -107,11 +107,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1768773494,
-        "narHash": "sha256-XsM7GP3jHlephymxhDE+/TKKO1Q16phz/vQiLBGhpF4=",
+        "lastModified": 1770464364,
+        "narHash": "sha256-z5NJPSBwsLf/OfD8WTmh79tlSU8XgIbwmk6qB1/TFzY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "77ef7a29d276c6d8303aece3444d61118ef71ac2",
+        "rev": "23d72dabcb3b12469f57b37170fcbc1789bd7457",
         "type": "github"
       },
       "original": {
@@ -221,11 +221,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768866793,
-        "narHash": "sha256-a02ej56O/h3AdTMqQIp4Tfvhmw9y91okXpZy8dDyogU=",
+        "lastModified": 1770497544,
+        "narHash": "sha256-K2ppYJEC3q7vEKKk8M5SbUGkucYUJ09ikypP+WoVO4E=",
         "ref": "refs/heads/technorino",
-        "rev": "559cefca962befc3b220f54e4ac6afeaf9b18afd",
-        "revCount": 6059,
+        "rev": "c48013e0bbdd8e22726614de9ffb3054d566ccc2",
+        "revCount": 6135,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/2547techno/technorino"
