@@ -205,6 +205,11 @@
     ];
   };
 
+  programs.captive-browser = {
+    enable = true;
+    interface = "wlo1";
+  };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
