@@ -161,7 +161,7 @@
 
   services.resolved = {
     enable = true;
-    dnsovertls = "true";
+    dnsovertls = "opportunistic";
   };
 
   services.power-profiles-daemon.enable = true;
