@@ -157,6 +157,15 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+    # stupid crackling!!!
+    extraConfig.pipewire = {
+      "10-custom" = {
+        "context.properties" = {
+          "default.clock.min-quantum" = 1024;
+          "default.clock.max-quantum" = 2048;
+        };
+      };
+    };
   };
 
   services.resolved = {
