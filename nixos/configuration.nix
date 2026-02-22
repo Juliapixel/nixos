@@ -258,6 +258,7 @@
     git
     gnumake
     htop
+    just
     kitty
     libqalculate
     pkg-config
