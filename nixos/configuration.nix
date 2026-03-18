@@ -113,6 +113,10 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "julia";
+  };
   services.desktopManager.plasma6.enable = true;
 
   # Configure console keymap
@@ -200,6 +204,7 @@
       vesktop
       make_it_braille.packages.${pkgs.stdenv.hostPlatform.system}.default
       prismlauncher
+      qbittorrent
       spotify
       technorino.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
