@@ -211,6 +211,8 @@
     shell = pkgs.zsh;
   };
 
+  hardware.bluetooth.enable = true;
+
   hardware.graphics = {
     enable = true;
     package = pkgs.mesa;
