@@ -36,7 +36,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                backupFileExtension = "hm-bkp-${builtins.toString self.lastModified}";
+                backupFileExtension = "hm-bkp-${self.shortRev}";
 
                 users.julia = ./nixos/home.nix;
               };

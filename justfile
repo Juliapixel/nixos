@@ -7,7 +7,7 @@ update:
     sudo nix flake update --flake {{ flake }}
 
 check:
-    nix flake check --flake {{ flake }}
+    nix flake check
 
 switch:
     sudo nixos-rebuild --flake {{ flake }} switch

@@ -274,10 +274,14 @@
     nixfmt
     nil
     podman-compose
-    source-code-pro
     tmux
     vim
     vscode
+  ];
+
+  fonts.packages = with pkgs; [
+    source-code-pro
+    monaspace
   ];
 
   system.stateVersion = "25.05";
