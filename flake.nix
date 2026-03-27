@@ -9,7 +9,6 @@
     open_in_mpv.url = "github:Juliapixel/open_in_mpv";
     technorino = {
       url = "git+https://github.com/2547techno/technorino?submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     make_it_braille = {
       url = "github:juliapixel/make_it_braille";
