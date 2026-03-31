@@ -202,11 +202,11 @@
     ];
     packages = with pkgs; [
       vesktop
-      make_it_braille.packages.${pkgs.stdenv.targetPlatform.system}.default
+      make_it_braille.packages.${pkgs.stdenv.hostPlatform.system}.default
       prismlauncher
       qbittorrent
       spotify
-      technorino.packages.${pkgs.stdenv.targetPlatform.system}.default
+      technorino.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
     shell = pkgs.zsh;
   };
@@ -255,7 +255,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    open_in_mpv.packages.${pkgs.stdenv.targetPlatform.system}.default
+    open_in_mpv.packages.${pkgs.stdenv.hostPlatform.system}.default
     mpv
     binutils
     btrfs-progs
