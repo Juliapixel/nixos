@@ -276,7 +276,7 @@
     podman-compose
     tmux
     vim
-    vscode
+    (vscode.override { commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland"; })
   ];
 
   fonts.packages = with pkgs; [
