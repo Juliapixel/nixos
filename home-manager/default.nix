@@ -2,9 +2,12 @@
   pkgs,
   lib,
   config,
+  noctalia,
   ...
 }:
 {
+  imports = [ ./niri.nix ./noctalia.nix ];
+
   home = {
     username = "julia";
     homeDirectory = "/home/julia";

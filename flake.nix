@@ -14,6 +14,14 @@
       url = "github:juliapixel/make_it_braille";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -23,25 +31,35 @@
       open_in_mpv,
       technorino,
       make_it_braille,
+      niri,
+      noctalia,
     }:
-    {
-      nixosConfigurations = {
-        julia-nix = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit open_in_mpv technorino make_it_braille; };
-          modules = [
-            ./nixos/configuration.nix
-            home-manager.nixosModules.default
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                backupFileExtension = "hm-bkp-${self.shortRev}";
+    let
 
-                users.julia = ./nixos/home.nix;
-              };
-            }
-          ];
-        };
+      mkSystem = system: nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit open_in_mpv technorino make_it_braille noctalia; };
+        modules = [
+          ./common
+          ./${system}/configuration.nix
+          home-manager.nixosModules.default
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "hm-bkp-${self.shortRev}";
+
+              users.julia.imports=  [ noctalia.homeModules.default ./home-manager ];
+            };
+          }
+          niri.nixosModules.niri
+          {
+            nixpkgs.overlays = [ niri.overlays.niri ];
+          }
+        ];
       };
+      systems = map (s: {name = s; value = (mkSystem s);}) [ "laptop" ];
+    in
+    {
+      nixosConfigurations = builtins.listToAttrs systems;
     };
 }
