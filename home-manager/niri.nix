@@ -8,19 +8,47 @@
   programs.niri.package = pkgs.niri;
   programs.niri.settings = {
     input.keyboard.xkb.layout = "br";
+    input.keyboard.numlock = true;
 
     input.touchpad = {
       natural-scroll = true;
       tap = true;
     };
 
+    outputs.eDP-1 = {
+      scale = 1.25;
+    };
+
     spawn-at-startup = [
       { command = [ "noctalia-shell" ]; }
+    ];
+
+    window-rules = [
+      {
+        clip-to-geometry = true;
+        geometry-corner-radius = {
+          bottom-left = 8.0;
+          bottom-right = 8.0;
+          top-left = 8.0;
+          top-right = 8.0;
+        };
+        shadow = {
+          enable = true;
+          softness = 30;
+          spread = 5;
+          offset = {
+            x = 0;
+            y = 5;
+          };
+          color = "#0007";
+        };
+      }
     ];
 
     binds = with config.lib.niri.actions; {
       "Mod+T".action = spawn "kitty";
       "Mod+D".action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
+      "Super+L".action = spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";
 
       "Mod+Shift+E".action = quit;
       "Ctrl+Alt+Delete".action = quit;
@@ -29,24 +57,25 @@
       "Super+Tab".action = toggle-overview;
 
       "Mod+Shift+Q".action = close-window;
+      "Mod+F".action = fullscreen-window;
 
       "Mod+Left".action = focus-column-or-monitor-left;
       "Mod+Down".action = focus-window-down;
       "Mod+Up".action = focus-window-up;
       "Mod+Right".action = focus-column-or-monitor-right;
-      "Mod+H".action = focus-column-or-monitor-left;
-      "Mod+J".action = focus-window-down;
-      "Mod+K".action = focus-window-up;
-      "Mod+L".action = focus-column-or-monitor-right;
+      # "Mod+H".action = focus-column-or-monitor-left;
+      # "Mod+J".action = focus-window-down;
+      # "Mod+K".action = focus-window-up;
+      # "Mod+L".action = focus-column-or-monitor-right;
 
       "Mod+Shift+Left".action = move-column-left;
       "Mod+Shift+Down".action = move-window-down;
       "Mod+Shift+Up".action = move-window-up;
       "Mod+Shift+Right".action = move-column-right;
-      "Mod+Shift+H".action = move-column-left;
-      "Mod+Shift+J".action = move-window-down;
-      "Mod+Shift+K".action = move-window-up;
-      "Mod+Shift+L".action = move-column-right;
+      # "Mod+Shift+H".action = move-column-left;
+      # "Mod+Shift+J".action = move-window-down;
+      # "Mod+Shift+K".action = move-window-up;
+      # "Mod+Shift+L".action = move-column-right;
 
       "Mod+Home".action = focus-column-first;
       "Mod+End".action = focus-column-last;
@@ -57,10 +86,10 @@
       "Mod+Ctrl+Down".action = focus-monitor-down;
       "Mod+Ctrl+Up".action = focus-monitor-up;
       "Mod+Ctrl+Right".action = focus-monitor-right;
-      "Mod+Ctrl+H".action = focus-monitor-left;
-      "Mod+Ctrl+J".action = focus-monitor-down;
-      "Mod+Ctrl+K".action = focus-monitor-up;
-      "Mod+Ctrl+L".action = focus-monitor-right;
+      # "Mod+Ctrl+H".action = focus-monitor-left;
+      # "Mod+Ctrl+J".action = focus-monitor-down;
+      # "Mod+Ctrl+K".action = focus-monitor-up;
+      # "Mod+Ctrl+L".action = focus-monitor-right;
 
       "Mod+Page_Down".action = focus-workspace-down;
       "Mod+Page_Up".action = focus-workspace-up;

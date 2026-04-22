@@ -105,6 +105,7 @@
     enable = true;
     user = "julia";
   };
+  services.displayManager.defaultSession = "niri";
   services.desktopManager.plasma6.enable = true;
 
   # Configure console keymap
