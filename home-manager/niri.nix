@@ -59,6 +59,12 @@
       { proportion = 2. / 3.; }
     ];
 
+    layout.focus-ring = {
+      active.color = "#00aaff80";
+      inactive.color = "#00aaff20";
+      width = 2;
+    };
+
     binds = with config.lib.niri.actions; {
       "Mod+T".action = spawn "kitty";
       "Mod+D".action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
