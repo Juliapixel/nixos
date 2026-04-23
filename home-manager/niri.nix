@@ -45,6 +45,19 @@
       }
     ];
 
+    layout.preset-column-widths = [
+      { proportion = 1. / 3.; }
+      { proportion = 0.5; }
+      { proportion = 2. / 3.; }
+    ];
+    layout.default-column-width.proportion = 0.5;
+
+    layout.preset-window-heights = [
+      { proportion = 1. / 3.; }
+      { proportion = 0.5; }
+      { proportion = 2. / 3.; }
+    ];
+
     binds = with config.lib.niri.actions; {
       "Mod+T".action = spawn "kitty";
       "Mod+D".action = spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";
@@ -57,7 +70,8 @@
       "Super+Tab".action = toggle-overview;
 
       "Mod+Shift+Q".action = close-window;
-      "Mod+F".action = fullscreen-window;
+      "Mod+F".action = maximize-column;
+      "Mod+Shift+F".action = fullscreen-window;
 
       "Mod+Left".action = focus-column-or-monitor-left;
       "Mod+Down".action = focus-window-down;
@@ -175,6 +189,7 @@
       "Mod+Shift+Minus".action = set-window-height "-10%";
       "Mod+Shift+Equal".action = set-window-height "+10%";
 
+      "Mod+W".action = switch-preset-column-width;
     };
   };
 }
