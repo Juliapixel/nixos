@@ -13,6 +13,7 @@
     input.touchpad = {
       natural-scroll = true;
       tap = true;
+      dwt = true;
     };
 
     outputs.eDP-1 = {
