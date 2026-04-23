@@ -51,7 +51,7 @@
       { proportion = 0.5; }
       { proportion = 2. / 3.; }
     ];
-    layout.default-column-width.proportion = 0.5;
+    layout.default-column-width.proportion = 2. / 3.;
 
     layout.preset-window-heights = [
       { proportion = 1. / 3.; }
