@@ -6,7 +6,10 @@
   ...
 }:
 {
-  imports = [ ./niri.nix ./noctalia.nix ];
+  imports = [
+    ./niri.nix
+    ./noctalia.nix
+  ];
 
   home = {
     username = "julia";

@@ -4,7 +4,8 @@
   make_it_braille,
   technorino,
   ...
-}: {
+}:
+{
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -71,7 +72,6 @@
       enableCompletion = true;
     };
   };
-
 
   fonts.packages = with pkgs; [
     source-code-pro

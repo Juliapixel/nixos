@@ -1,8 +1,6 @@
 {
   config,
   open_in_mpv,
-  technorino,
-  make_it_braille,
   pkgs,
   ...
 }:
@@ -225,7 +223,9 @@
     podman-compose
     tmux
     vim
-    (vscode.override { commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland"; })
+    (vscode.override {
+      commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+    })
     xwayland-satellite
   ];
 
