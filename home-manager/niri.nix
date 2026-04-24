@@ -46,6 +46,14 @@
       }
     ];
 
+    layout.gaps = 10;
+    layout.struts = {
+      top = 2;
+      right = 4;
+      bottom = 4;
+      left = 4;
+    };
+
     layout.preset-column-widths = [
       { proportion = 1. / 3.; }
       { proportion = 0.5; }
