@@ -120,4 +120,38 @@
       ];
     };
   };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications =
+      let
+        wah =
+          app: mimes:
+          pkgs.lib.listToAttrs (
+            map (m: {
+              name = m;
+              value = app;
+            }) mimes
+          );
+      in
+      {
+        "inode/directory" = "org.kde.dolphin.desktop";
+        "video/*" = "mpv.desktop";
+      }
+      // wah "firefox.desktop" [
+        "applications/x-www-browser"
+        "x-scheme-handler/http"
+        "x-scheme-handler/https"
+        "x-scheme-handler/chrome"
+        "x-scheme-handler/about"
+        "x-scheme-handler/unknown"
+        "application/x-extension-htm"
+        "application/x-extension-html"
+        "application/x-extension-shtml"
+        "application/xhtml+xml"
+        "application/x-extension-xhtml"
+        "application/x-extension-xht"
+        "application/pdf"
+      ];
+  };
 }
