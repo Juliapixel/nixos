@@ -285,6 +285,7 @@
       ui = {
         fontDefault = "Noto Sans";
         fontFixed = "monospace";
+        panelBackgroundOpacity = 0.75;
         translucentWidgets = true;
       };
       wallpaper = {
