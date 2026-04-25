@@ -17,6 +17,7 @@
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.niri-stable.url = "github:niri-wm/niri/v26.04";
     };
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";

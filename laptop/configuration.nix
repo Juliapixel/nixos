@@ -196,7 +196,7 @@
 
   programs.niri = {
     enable = true;
-    package = pkgs.niri;
+    package = pkgs.niri-stable.override { replace-service-with-usr-bin = false; };
   };
 
   nixpkgs.config.allowUnfree = true;

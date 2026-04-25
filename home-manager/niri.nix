@@ -5,7 +5,6 @@
   ...
 }:
 {
-  programs.niri.package = pkgs.niri;
   programs.niri.settings = {
     input.keyboard.xkb.layout = "br";
     input.keyboard.numlock = true;
