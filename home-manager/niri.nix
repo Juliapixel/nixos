@@ -23,6 +23,8 @@
       { command = [ "noctalia-shell" ]; }
     ];
 
+    prefer-no-csd = true;
+
     window-rules = [
       {
         clip-to-geometry = true;
