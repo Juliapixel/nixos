@@ -9,6 +9,10 @@
     input.keyboard.xkb.layout = "br";
     input.keyboard.numlock = true;
 
+    input.mouse = {
+      accel-profile = "flat";
+    };
+
     input.touchpad = {
       natural-scroll = true;
       tap = true;
