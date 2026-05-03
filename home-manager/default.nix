@@ -159,12 +159,14 @@
     enable = true;
     config = {
       niri = {
+        "default" = [ "gnome" ];
         "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
       };
     };
     extraPortals = with pkgs; [
       kdePackages.xdg-desktop-portal-kde
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
     ];
   };
 }
