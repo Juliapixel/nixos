@@ -154,4 +154,17 @@
         "application/pdf"
       ];
   };
+
+  xdg.portal = {
+    enable = true;
+    config = {
+      niri = {
+        "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+      };
+    };
+    extraPortals = with pkgs; [
+      kdePackages.xdg-desktop-portal-kde
+      xdg-desktop-portal-gtk
+    ];
+  };
 }

@@ -215,7 +215,6 @@
     just
     kitty
     libqalculate
-    nautilus
     pkg-config
     python314
     nixd

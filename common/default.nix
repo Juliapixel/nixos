@@ -55,6 +55,9 @@
         };
         GenerativeAI.Chatbot = false;
       };
+      preferences = {
+        "widget.use-xdg-desktop-portal.file-picker" = 1;
+      };
     };
 
     steam = {
