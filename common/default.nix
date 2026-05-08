@@ -31,6 +31,7 @@
       "networkmanager"
       "podman"
       "wheel"
+      "dialout"
     ];
     packages = with pkgs; [
       vesktop
