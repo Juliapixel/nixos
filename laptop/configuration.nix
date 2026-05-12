@@ -185,6 +185,7 @@
     enable = true;
     package = pkgs.mesa;
     extraPackages = with pkgs; [
+      intel-media-driver
       intel-vaapi-driver
     ];
   };
