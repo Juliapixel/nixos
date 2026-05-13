@@ -125,7 +125,7 @@
     enable = true;
     defaultApplications =
       let
-        wah =
+        splat =
           app: mimes:
           pkgs.lib.listToAttrs (
             map (m: {
@@ -138,7 +138,7 @@
         "inode/directory" = "org.kde.dolphin.desktop";
         "video/*" = "mpv.desktop";
       }
-      // wah "firefox.desktop" [
+      // splat "firefox.desktop" [
         "applications/x-www-browser"
         "x-scheme-handler/http"
         "x-scheme-handler/https"
@@ -152,6 +152,11 @@
         "application/x-extension-xhtml"
         "application/x-extension-xht"
         "application/pdf"
+      ]
+      // splat "org.kde.ark.desktop" [
+        "application/x-7z-compressed"
+        "application/x-compressed-tar"
+        "application/x-xz-compressed-tar"
       ];
   };
 
