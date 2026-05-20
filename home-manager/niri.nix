@@ -23,6 +23,8 @@
       scale = 1.25;
     };
 
+    clipboard.disable-primary = true;
+
     spawn-at-startup = [
       { command = [ "noctalia-shell" ]; }
     ];
