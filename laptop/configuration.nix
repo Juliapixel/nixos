@@ -161,7 +161,7 @@
 
   services.resolved = {
     enable = true;
-    dnsovertls = "opportunistic";
+    settings.Resolve.DNSOverTLS = "opportunistic";
   };
 
   services.power-profiles-daemon.enable = true;
