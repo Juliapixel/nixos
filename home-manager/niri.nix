@@ -26,7 +26,13 @@
     clipboard.disable-primary = true;
 
     spawn-at-startup = [
-      { command = [ "noctalia-shell" ]; }
+      {
+        command = [
+          "env"
+          "QT_QPA_PLATFORMTHEME=${config.qt.platformTheme.name}"
+          "noctalia-shell"
+        ];
+      }
     ];
 
     prefer-no-csd = true;
