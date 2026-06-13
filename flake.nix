@@ -73,7 +73,7 @@
       systems = map (s: {
         name = s;
         value = (mkSystem s);
-      }) [ "laptop" ];
+      }) [ "laptop" "desktop" ];
     in
     {
       nixosConfigurations = builtins.listToAttrs systems;

@@ -45,39 +45,7 @@
 
   networking.hostName = "julia-nix"; # Define your hostname.
 
-  networking.networkmanager.enable = true;
-
-  networking.nameservers = [
-    "1.1.1.1#one.one.one.one"
-    "2606:4700:4700::1111#one.one.one.one"
-    "1.0.0.1#one.one.one.one"
-    "2606:4700:4700::1001#one.one.one.one"
-    "8.8.8.8#dns.google"
-    "2001:4860:4860::8888#dns.google"
-    "8.4.4.8#dns.google"
-    "2001:4860:4860::8844#dns.google"
-  ];
-
-  # Set your time zone.
-  time.timeZone = "America/Sao_Paulo";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "pt_BR.UTF-8";
-    LC_IDENTIFICATION = "pt_BR.UTF-8";
-    LC_MEASUREMENT = "pt_BR.UTF-8";
-    LC_MONETARY = "pt_BR.UTF-8";
-    LC_NAME = "pt_BR.UTF-8";
-    LC_NUMERIC = "pt_BR.UTF-8";
-    LC_PAPER = "pt_BR.UTF-8";
-    LC_TELEPHONE = "pt_BR.UTF-8";
-    LC_TIME = "pt_BR.UTF-8";
-  };
-
   systemd = {
-    oomd.enable = true;
     # limit charge to 90% if not limited
     services.bat_cap =
       let
@@ -110,22 +78,12 @@
   services.displayManager.defaultSession = "niri";
   services.desktopManager.plasma6.enable = true;
 
-  # Configure console keymap
-  console.keyMap = "br-abnt2";
-
   virtualisation = {
     containers.enable = true;
     podman = {
       enable = true;
       dockerCompat = true;
       defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
-    };
-  };
-
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
     };
   };
 
@@ -143,37 +101,7 @@
     ];
   };
 
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-    # stupid crackling!!!
-    extraConfig.pipewire = {
-      "10-custom" = {
-        "context.properties" = {
-          "default.clock.min-quantum" = 1024;
-          "default.clock.max-quantum" = 2048;
-        };
-      };
-    };
-  };
-
-  services.resolved = {
-    enable = true;
-    settings.Resolve.DNSOverTLS = "opportunistic";
-  };
-
   services.power-profiles-daemon.enable = true;
-
-  services.fstrim.enable = true;
-
-  services.tailscale.enable = true;
-  services.tailscale.useRoutingFeatures = "client";
 
   # lets btop read intel Xe gpu usage
   security.wrappers.btop = {
@@ -204,8 +132,6 @@
     package = pkgs.niri-stable.override { replace-service-with-usr-bin = false; };
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   environment.systemPackages = with pkgs; [
     open_in_mpv.packages.${pkgs.stdenv.hostPlatform.system}.default
     mpv
@@ -232,11 +158,6 @@
       commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
     })
     xwayland-satellite
-  ];
-
-  fonts.packages = with pkgs; [
-    source-code-pro
-    monaspace
   ];
 
   system.stateVersion = "25.05";
