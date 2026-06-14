@@ -19,6 +19,11 @@
       dwt = true;
     };
 
+    input.focus-follows-mouse = {
+      enable = true;
+      max-scroll-amount = "20%";
+    };
+
     outputs.eDP-1 = {
       scale = 1.25;
     };
