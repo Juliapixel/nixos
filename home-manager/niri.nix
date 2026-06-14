@@ -19,9 +19,10 @@
       dwt = true;
     };
 
+    # focus follows mouse when across monitors but not for windows
     input.focus-follows-mouse = {
       enable = true;
-      max-scroll-amount = "20%";
+      max-scroll-amount = "0%";
     };
 
     outputs.eDP-1 = {
