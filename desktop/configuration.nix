@@ -33,6 +33,32 @@
     package = pkgs.niri-stable.override { replace-service-with-usr-bin = false; };
   };
 
+  home-manager.users.julia.programs.niri.settings.outputs = {
+    "DP-1" = {
+      mode = {
+        width = 1920;
+        height = 1080;
+        refresh = 143.981;
+      };
+      variable-refresh-rate = true;
+      position = {
+        x = 1920;
+        y = 0;
+      };
+    };
+    "HDMI-A-1" = {
+      mode = {
+        width = 1920;
+        height = 1080;
+        refresh = 60.000;
+      };
+      position = {
+        x = 0;
+        y = 160;
+      };
+    };
+  };
+
   services.displayManager = {
     sddm.enable = true;
     sddm.wayland.enable = true;
