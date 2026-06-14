@@ -56,6 +56,8 @@
       settings = {
         add_newline = false;
         format = lib.concatStrings [
+          "$username"
+          "$hostname"
           "$directory"
           "$git_branch"
           "$git_status"
@@ -93,6 +95,19 @@
           format = "[$symbol]($style) ";
           style = "cyan";
           symbol = "✶ ";
+          heuristic = true;
+        };
+
+        hostname = {
+          ssh_only = true;
+          style = "bold green";
+          format = "[@$hostname ]($style)";
+        };
+
+        username = {
+          style_user = "bold green";
+          style_root = "bold red";
+          format = "[$user]($style)";
         };
       };
     };
