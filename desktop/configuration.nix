@@ -28,6 +28,8 @@
     branch = "legacy_580";
   };
 
+  networking.hostName = "julia-desktop"; # Define your hostname.
+
   programs.niri = {
     enable = true;
     package = pkgs.niri-stable.override { replace-service-with-usr-bin = false; };
