@@ -17,6 +17,8 @@
     options = "--delete-older-than 7d";
   };
 
+  nix.settings.trusted-users = [ "root" "julia" "@wheel" ];
+
   nixpkgs.config.allowUnfree = true;
 
   networking.networkmanager.enable = true;
