@@ -109,6 +109,18 @@
     transcoding = {
       threadCount = 4;
       throttleTranscoding = true;
+      hardwareDecodingCodecs = {
+        av1 = false;
+        vp8 = true;
+        vp9 = true;
+        h264 = true;
+        hevc = true;
+        hevc10bit = true;
+      };
+      hardwareEncodingCodecs = {
+        hevc = true;
+        av1 = false;
+      };
     };
   };
 
