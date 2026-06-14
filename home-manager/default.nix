@@ -121,6 +121,13 @@
     };
   };
 
+  home.pointerCursor = {
+    package = pkgs.kdePackages.breeze;
+    name = "breeze_cursors";
+    x11.enable = true;
+    gtk.enable = true;
+  };
+
   gtk = {
     enable = true;
     theme = {
