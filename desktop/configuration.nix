@@ -104,6 +104,7 @@
     hardwareAcceleration = {
       enable = true;
       type = "nvenc";
+      device = "/dev/dri/by-path/pci-0000:0a:00.0-render";
     };
     transcoding = {
       threadCount = 4;
