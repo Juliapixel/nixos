@@ -24,6 +24,21 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  fileSystems."/mnt/backup" =
+    { device = "/dev/disk/by-uuid/00F6DD50F6DD4696";
+      fsType = "ntfs3";
+    };
+
+  fileSystems."/mnt/ssdeeznuts" =
+    { device = "/dev/disk/by-uuid/E4A87637A8760876";
+      fsType = "ntfs3";
+    };
+
+  fileSystems."/mnt/wahoo" =
+    { device = "/dev/disk/by-uuid/1517e543-7488-4ec9-93cd-8264def57fec";
+      fsType = "ext4";
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/b6acc0f6-c204-4df4-8f1a-614dd9622c86"; }
     ];

@@ -18,6 +18,34 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # dont fry my ssds
+  fileSystems =
+    let
+      mkSsdOptions = lib.foldl (
+        a: b:
+        {
+          ${b}.options = [
+            "defaults"
+            "noatime"
+            "async"
+            "errors=remount-ro"
+            "commit=30"
+          ];
+        }
+        // a
+      ) { };
+    in
+    lib.mkMerge [
+      (mkSsdOptions [
+        "/"
+        "/mnt/wahoo"
+        "/mnt/ssdeeznuts"
+      ])
+      { "/mnt/wahoo".options = [ "nofail" ]; }
+      { "/mnt/ssdeeznuts".options = [ "nofail" ]; }
+      { "/mnt/backup".options = [ "nofail" ]; }
+    ];
+
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.graphics.enable = true;
@@ -27,6 +55,8 @@
     modesetting.enable = true;
     branch = "legacy_580";
   };
+
+  services.fstrim.enable = true;
 
   networking.hostName = "julia-desktop"; # Define your hostname.
 
