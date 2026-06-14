@@ -69,6 +69,18 @@
     defaultSession = "niri";
   };
 
+  services.jellyfin = {
+    enable = true;
+    hardwareAcceleration = {
+      enable = true;
+      type = "nvenc";
+    };
+    transcoding = {
+      threadCount = 4;
+      throttleTranscoding = true;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     open_in_mpv.packages.${pkgs.stdenv.hostPlatform.system}.default
     mpv
