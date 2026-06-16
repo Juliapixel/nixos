@@ -42,12 +42,12 @@
 
   fileSystems."/mnt/backup" = {
     device = "/dev/disk/by-uuid/00F6DD50F6DD4696";
-    fsType = "ntfs3";
+    fsType = "ntfs-3g";
   };
 
   fileSystems."/mnt/ssdeeznuts" = {
     device = "/dev/disk/by-uuid/E4A87637A8760876";
-    fsType = "ntfs3";
+    fsType = "ntfs-3g";
   };
 
   fileSystems."/mnt/wahoo" = {
