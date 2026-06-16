@@ -48,6 +48,10 @@
       font.package = pkgs.source-code-pro;
       font.name = "Source Code Pro";
       themeFile = "ayu_mirage";
+      settings = {
+        background_blur = 1;
+        background_opacity = 0.95;
+      };
     };
 
     starship = {
