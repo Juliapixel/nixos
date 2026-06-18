@@ -21,8 +21,8 @@
 
     # focus follows mouse when across monitors but not for windows
     input.focus-follows-mouse = {
-      enable = true;
-      max-scroll-amount = "0%";
+      # ts pmo begone
+      enable = lib.mkForce false;
     };
 
     outputs.eDP-1 = {
