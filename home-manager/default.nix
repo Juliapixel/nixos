@@ -161,8 +161,9 @@
   };
 
   qt = {
-    enable = true;
-    platformTheme.name = "gtk3";
+    # this breaks kde for some reason???
+    enable = false;
+    platformTheme.name = "gtk";
   };
 
   xdg.mimeApps = {

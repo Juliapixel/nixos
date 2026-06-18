@@ -35,7 +35,6 @@
       {
         command = [
           "env"
-          "QT_QPA_PLATFORMTHEME=${config.qt.platformTheme.name}"
           "noctalia-shell"
         ];
       }
