@@ -133,6 +133,9 @@
 
     steam = {
       enable = true;
+      extraPackages = with pkgs; [
+        gamescope
+      ];
       extraCompatPackages = [ pkgs.proton-ge-bin ];
     };
 
