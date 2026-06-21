@@ -56,6 +56,19 @@
     branch = "legacy_580";
   };
 
+  # only add cudaSupport for a few packages cuz i dont wanna rebuild all of nixpkgs
+  nixpkgs.overlays = [
+    (
+      final: prev:
+      let
+        cudaOverlay = lib.foldl (
+          acc: p: acc // { ${p} = prev.${p}.override { cudaSupport = true; }; }
+        ) { };
+      in
+      cudaOverlay [ "btop" "obs-studio" ]
+    )
+  ];
+
   services.fstrim.enable = true;
 
   networking.hostName = "julia-desktop"; # Define your hostname.
