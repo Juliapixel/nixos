@@ -130,6 +130,7 @@
       type = "nvenc";
       device = "/dev/dri/by-path/pci-0000:0a:00.0-render";
     };
+    openFirewall = true;
     transcoding = {
       threadCount = 4;
       throttleTranscoding = true;
