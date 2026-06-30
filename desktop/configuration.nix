@@ -69,11 +69,12 @@
     (
       final: prev:
       let
-        cudaOverlay = lib.foldl (
-          acc: p: acc // { ${p} = prev.${p}.override { cudaSupport = true; }; }
-        ) { };
+        cudaOverlay = lib.foldl (acc: p: acc // { ${p} = prev.${p}.override { cudaSupport = true; }; }) { };
       in
-      cudaOverlay [ "btop" "obs-studio" ]
+      cudaOverlay [
+        "btop"
+        "obs-studio"
+      ]
     )
   ];
 
@@ -164,6 +165,7 @@
     btrfs-progs
     curl
     ffmpeg-full
+    gamescope
     gcc
     git
     gnumake
