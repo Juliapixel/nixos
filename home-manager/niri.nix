@@ -107,7 +107,7 @@
           arg:
           config.lib.niri.actions.spawn (
             [
-              (toString config.programs.noctalia.package)
+              (lib.getExe config.programs.noctalia.package)
               "msg"
             ]
             ++ arg
