@@ -24,6 +24,16 @@
 
       shell = {
         transparency_mode = "soft";
+
+        launcher.session_search = true;
+
+        panel = {
+          clipboard_placement = "attached";
+          open_near_click_clipboard = true;
+          open_near_click_control_center = true;
+          open_near_click_launcher = true;
+          transparency_mode = "soft";
+        };
       };
 
       wallpaper = {
