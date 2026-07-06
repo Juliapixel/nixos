@@ -124,6 +124,10 @@
           "session"
           "lock"
         ];
+        "Mod+V".action = noctalia_ipc [
+          "panel-toggle"
+          "clipboard"
+        ];
 
         "Mod+Shift+E".action = quit;
         "Ctrl+Alt+Delete".action = quit;
