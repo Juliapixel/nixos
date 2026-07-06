@@ -56,6 +56,11 @@
 
         workspaces.display = "none";
 
+        taskbar = {
+          group_by_workspace = true;
+          hide_empty_workspaces = true;
+        };
+
         clock = {
           font_weight = 600;
           format = "{:%x %R}";
@@ -71,7 +76,7 @@
 
       bar.default = {
         background_opacity = 0.85;
-        center = [ "workspaces" ];
+        center = [ "taskbar" ];
         end = [
           "tray"
           "notifications"
