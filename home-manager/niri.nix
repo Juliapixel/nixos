@@ -34,8 +34,7 @@
     spawn-at-startup = [
       {
         command = [
-          "env"
-          "noctalia-shell"
+          (toString (lib.getExe config.programs.noctalia.package))
         ];
       }
     ];
@@ -108,22 +107,21 @@
           arg:
           config.lib.niri.actions.spawn (
             [
-              "noctalia-shell"
-              "ipc"
-              "call"
+              (toString config.programs.noctalia.package)
+              "msg"
             ]
             ++ arg
           );
       in
       with config.lib.niri.actions;
       {
-        "Mod+T".action = spawn "kitty";
+        "Mod+T".action = spawn ["kitty"];
         "Mod+D".action = noctalia_ipc [
+          "panel-toggle"
           "launcher"
-          "toggle"
         ];
         "Super+L".action = noctalia_ipc [
-          "lockScreen"
+          "session"
           "lock"
         ];
 
@@ -256,28 +254,24 @@
         "Mod+W".action = switch-preset-column-width;
 
         "XF86AudioRaiseVolume".action = noctalia_ipc [
-          "volume"
-          "increase"
+          "volume-up"
         ];
         "XF86AudioLowerVolume".action = noctalia_ipc [
-          "volume"
-          "decrease"
+          "volume-down"
         ];
         "XF86AudioMute".action = noctalia_ipc [
-          "volume"
-          "muteOutput"
+          "volume-mute"
         ];
         "XF86AudioMicMute".action = noctalia_ipc [
-          "volume"
-          "muteInput"
+          "mic-mute"
         ];
         "XF86AudioPlay".action = noctalia_ipc [
           "media"
-          "playPause"
+          "toggle"
         ];
         "XF86AudioPause".action = noctalia_ipc [
           "media"
-          "playPause"
+          "toggle"
         ];
         "XF86AudioNext".action = noctalia_ipc [
           "media"
@@ -289,12 +283,10 @@
         ];
 
         "XF86MonBrightnessDown".action = noctalia_ipc [
-          "brightness"
-          "decrease"
+          "brightness-down"
         ];
         "XF86MonBrightnessUp".action = noctalia_ipc [
-          "brightness"
-          "increase"
+          "brightness-up"
         ];
       };
   };
