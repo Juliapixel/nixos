@@ -101,6 +101,15 @@
       width = 2;
     };
 
+    switch-events = {
+      lid-close.action = config.lib.niri.actions.spawn [
+        (lib.getExe config.programs.noctalia.package)
+        "msg"
+        "session"
+        "lock"
+      ];
+    };
+
     binds =
       let
         noctalia_ipc =
