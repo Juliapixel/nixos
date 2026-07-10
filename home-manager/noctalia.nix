@@ -89,6 +89,7 @@
           "session"
         ];
         margin_ends = 12;
+        margin_edge = 10;
         start = [
           "launcher"
           "clock"
