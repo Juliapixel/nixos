@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   make_it_braille,
   technorino,
   ...
@@ -97,11 +98,14 @@
   users.users.julia = {
     isNormalUser = true;
     description = "Julia";
-    extraGroups = [
-      "networkmanager"
-      "podman"
-      "wheel"
-      "dialout"
+    extraGroups = lib.mkMerge [
+      [
+        "networkmanager"
+        "podman"
+        "wheel"
+        "dialout"
+      ]
+      (lib.mkIf config.programs.gamemode.enable [ "gamemode" ])
     ];
     packages = with pkgs; [
       vesktop
@@ -130,6 +134,10 @@
         "widget.use-xdg-desktop-portal.file-picker" = 1;
         "middlemouse.paste" = false;
       };
+    };
+
+    gamemode = {
+      enable = config.programs.steam.enable;
     };
 
     steam = {
