@@ -87,6 +87,8 @@
     };
   };
 
+  services.tailscale.useRoutingFeatures = "client";
+
   services.avahi = {
     enable = true;
     nssmdns4 = true;

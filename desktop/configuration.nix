@@ -123,6 +123,11 @@
     };
   };
 
+  services.tailscale = {
+    useRoutingFeatures = "both";
+    openFirewall = true;
+  };
+
   services.jellyfin = {
     enable = true;
     hardwareAcceleration = {
