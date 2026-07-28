@@ -48,6 +48,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  hardware.bluetooth.enable = true;
   hardware.graphics.enable = true;
   hardware.nvidia = {
     videoAcceleration = true;
