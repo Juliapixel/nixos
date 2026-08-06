@@ -23,9 +23,7 @@
       };
 
       shell = {
-        transparency_mode = "soft";
-
-        launcher.session_search = true;
+        launcher.providers.session.global = true;
 
         panel = {
           clipboard_placement = "attached";
@@ -54,8 +52,6 @@
 
         network.show_label = false;
 
-        workspaces.display = "none";
-
         taskbar = {
           group_by_workspace = true;
           hide_empty_workspaces = true;
@@ -68,11 +64,11 @@
           tooltip_format = "{:%c}";
         };
 
-        cpu.show_label = false;
-        ram.show_label = false;
+        cpu.show_value = false;
+        ram.show_value = false;
       };
 
-      lockscreen.tint = 0.5;
+      lockscreen.tint_intensity = 0.5;
 
       bar.default = {
         background_opacity = 0.85;
