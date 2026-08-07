@@ -29,6 +29,8 @@
       scale = 1.25;
     };
 
+    gestures.hot-corners.enable = false;
+
     clipboard.disable-primary = true;
 
     spawn-at-startup = [
