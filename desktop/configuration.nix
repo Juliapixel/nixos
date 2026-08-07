@@ -79,6 +79,8 @@
     package = pkgs.niri-stable.override { replace-service-with-usr-bin = false; };
   };
 
+  programs.nix-ld.enable = true;
+
   home-manager.users.julia.programs.niri.settings.outputs = {
     "DP-1" = {
       mode = {
