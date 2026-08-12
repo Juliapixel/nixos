@@ -78,6 +78,8 @@
   services.displayManager.defaultSession = "niri";
   services.desktopManager.plasma6.enable = true;
 
+  services.thermald.enable = true;
+
   virtualisation = {
     containers.enable = true;
     podman = {
