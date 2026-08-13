@@ -54,6 +54,7 @@
     videoAcceleration = true;
     open = true;
     modesetting.enable = true;
+    branch = "latest";
   };
 
   # only add cudaSupport for a few packages cuz i dont wanna rebuild all of nixpkgs
