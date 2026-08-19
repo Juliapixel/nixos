@@ -81,6 +81,7 @@
   services.thermald.enable = true;
 
   virtualisation = {
+    vmware.host.enable = true;
     containers.enable = true;
     podman = {
       enable = true;
