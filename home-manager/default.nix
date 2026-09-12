@@ -66,7 +66,6 @@
           "$git_branch"
           "$git_status"
           "$git_state"
-          "$nix_shell"
           "$character"
         ];
 
