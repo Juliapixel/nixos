@@ -100,7 +100,6 @@
     extraGroups = lib.mkMerge [
       [
         "networkmanager"
-        "podman"
         "wheel"
         "dialout"
       ]
