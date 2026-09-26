@@ -7,18 +7,20 @@
   ...
 }:
 {
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   nix.gc = {
     dates = "weekly";
     automatic = true;
     options = "--delete-older-than 7d";
   };
 
-  nix.settings.trusted-users = [ "root" "julia" "@wheel" ];
+  nix.settings = {
+    trusted-users = [ "root" "julia" "@wheel" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    builders-use-substitutes = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
 
