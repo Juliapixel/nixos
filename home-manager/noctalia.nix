@@ -68,7 +68,10 @@
         ram.show_value = false;
       };
 
-      lockscreen.tint_intensity = 0.5;
+      lockscreen = {
+        transition = [ ];
+        tint_intensity = 0.5;
+      };
 
       bar.default = {
         background_opacity = 0.85;
@@ -96,13 +99,18 @@
         thickness = 32;
         widget_spacing = 12;
 
-        capsule_group = [{
-          enabled = true;
-          id = "g1";
-          members = ["cpu" "ram"];
-          opacity = 0.5;
-          padding = 6.0;
-        }];
+        capsule_group = [
+          {
+            enabled = true;
+            id = "g1";
+            members = [
+              "cpu"
+              "ram"
+            ];
+            opacity = 0.5;
+            padding = 6.0;
+          }
+        ];
       };
     };
   };
