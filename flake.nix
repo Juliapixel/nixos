@@ -68,14 +68,6 @@
             {
               nixpkgs.overlays = [ niri.overlays.niri ];
             }
-            # TODO: hack to fix broken packages due to locked vulnerable pnpm version
-            {
-              nixpkgs.overlays = [
-                (final: prev: {
-                  pnpm_10_29_2 = final.pnpm_10;
-                })
-              ];
-            }
           ];
         };
       systems =
