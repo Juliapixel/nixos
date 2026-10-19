@@ -29,6 +29,8 @@
       scale = 1.25;
     };
 
+    hotkey-overlay.skip-at-startup = true;
+
     gestures.hot-corners.enable = false;
 
     clipboard.disable-primary = true;
