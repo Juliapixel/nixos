@@ -69,7 +69,6 @@
       {
         matches = [ { namespace = "noctalia"; } ];
         background-effect = {
-          blur = true;
           xray = false;
         };
       }
