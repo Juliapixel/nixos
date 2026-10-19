@@ -65,16 +65,15 @@
       }
     ];
 
-    # Soon TM
-    # layer-rules = [
-    #   {
-    #     match.namespace = "noctalia";
-    #     background-effect = {
-    #       blur = true;
-    #       xray = false;
-    #     };
-    #   }
-    # ];
+    layer-rules = [
+      {
+        matches = [ { namespace = "noctalia"; } ];
+        background-effect = {
+          blur = true;
+          xray = false;
+        };
+      }
+    ];
 
     layout.gaps = 10;
     layout.struts = {

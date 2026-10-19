@@ -140,7 +140,7 @@
 
   programs.niri = {
     enable = true;
-    package = pkgs.niri-stable.override { replace-service-with-usr-bin = false; };
+    package = pkgs.niri-stable;
   };
 
   environment.systemPackages = with pkgs; [
