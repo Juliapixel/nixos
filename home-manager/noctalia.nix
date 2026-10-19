@@ -7,6 +7,8 @@
   programs.noctalia = {
     enable = true;
     settings = {
+      audio.enable_sounds = false;
+
       dock = {
         active_monitor_only = true;
         auto_hide = true;
