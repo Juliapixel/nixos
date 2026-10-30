@@ -19,12 +19,6 @@
       dwt = true;
     };
 
-    # focus follows mouse when across monitors but not for windows
-    input.focus-follows-mouse = {
-      # ts pmo begone
-      enable = lib.mkForce false;
-    };
-
     outputs.eDP-1 = {
       scale = 1.25;
     };
