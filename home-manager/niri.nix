@@ -31,7 +31,12 @@
 
     hotkey-overlay.skip-at-startup = true;
 
-    gestures.hot-corners.enable = false;
+    gestures.hot-corners = {
+      top-left = false;
+      top-right = false;
+      bottom-left = false;
+      bottom-right = false;
+    };
 
     clipboard.disable-primary = true;
 
