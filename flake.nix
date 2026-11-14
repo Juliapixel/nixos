@@ -22,6 +22,10 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    bootvine = {
+      url = "https://codeberg.org/wvhulle/bootvine/archive/main.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -33,6 +37,7 @@
       make_it_braille,
       niri,
       noctalia,
+      bootvine,
     }:
     let
 
@@ -64,6 +69,7 @@
               };
             }
             niri.nixosModules.niri
+            bootvine.nixosModules.default
             {
               nixpkgs.overlays = [ niri.overlays.niri ];
             }

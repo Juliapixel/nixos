@@ -67,6 +67,10 @@
 
   systemd.oomd.enable = true;
 
+  services.bootvine = {
+    enable = true;
+  };
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security = {
