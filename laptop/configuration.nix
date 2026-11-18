@@ -82,11 +82,13 @@
   services.thermald.enable = true;
 
   virtualisation = {
-    vmware.host.enable = true;
-    vmware.host.package = pkgs.vmware-workstation.overrideAttrs {
-      postInstall = ''
-        cp unpacked/vmware-tools-windows/windows.iso $out/lib/vmware/isoimages/
-      '';
+    vmware.host = {
+      enable = true;
+      package = pkgs.vmware-workstation.overrideAttrs {
+        postInstall = ''
+          cp unpacked/vmware-tools-windows/windows.iso $out/lib/vmware/isoimages/
+        '';
+      };
     };
     containers.enable = true;
     podman = {
